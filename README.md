@@ -3,7 +3,6 @@
 Update :
 1. 27/04/25 (Progres 20%)
    - Penambahan Form Dokter, Obat, Pasien dan Perawat
-     
 3. 12/05/25 (Progres 80%)
    - Update tampilan UI
    - Update form master, transaksi, dan report
