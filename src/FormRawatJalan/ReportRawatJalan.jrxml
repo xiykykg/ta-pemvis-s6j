@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c8f5f487-2ac8-4867-b417-d8f7502edd6f">
+	<property name="ireport.zoom" value="1.9487171000000054"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     rawat_jalan.`id_rawat_jalan` AS rawat_jalan_id_rawat_jalan,
+     rawat_jalan.`kode_periksa` AS rawat_jalan_kode_periksa,
+     rawat_jalan.`kode_obat` AS rawat_jalan_kode_obat,
+     rawat_jalan.`jumlah_obat` AS rawat_jalan_jumlah_obat,
+     rawat_jalan.`harga` AS rawat_jalan_harga,
+     pasien.`id_pasien` AS pasien_id_pasien,
+     pasien.`nama_pasien` AS pasien_nama_pasien,
+     pasien.`jenis_kelamin` AS pasien_jenis_kelamin,
+     pasien.`umur` AS pasien_umur,
+     pasien.`alamat` AS pasien_alamat,
+     pasien.`no_hp` AS pasien_no_hp,
+     pemeriksaan.`kode_periksa` AS pemeriksaan_kode_periksa,
+     pemeriksaan.`id_pasien` AS pemeriksaan_id_pasien,
+     pemeriksaan.`id_dokter` AS pemeriksaan_id_dokter,
+     pemeriksaan.`diagnosa` AS pemeriksaan_diagnosa,
+     pemeriksaan.`tgl_periksa` AS pemeriksaan_tgl_periksa,
+     obat.`kode_obat` AS obat_kode_obat,
+     obat.`nama_obat` AS obat_nama_obat,
+     obat.`jenis_obat` AS obat_jenis_obat,
+     obat.`harga` AS obat_harga,
+     dokter.`id_dokter` AS dokter_id_dokter,
+     dokter.`nama_dokter` AS dokter_nama_dokter,
+     dokter.`id_spesialis` AS dokter_id_spesialis,
+     dokter.`hari_praktek` AS dokter_hari_praktek,
+     dokter.`jam_praktek` AS dokter_jam_praktek
+FROM
+     `pemeriksaan` pemeriksaan INNER JOIN `rawat_jalan` rawat_jalan ON pemeriksaan.`kode_periksa` = rawat_jalan.`kode_periksa`
+     INNER JOIN `pasien` pasien ON pemeriksaan.`id_pasien` = pasien.`id_pasien`
+     INNER JOIN `dokter` dokter ON pemeriksaan.`id_dokter` = dokter.`id_dokter`
+     INNER JOIN `obat` obat ON rawat_jalan.`kode_obat` = obat.`kode_obat`]]>
+	</queryString>
+	<field name="rawat_jalan_id_rawat_jalan" class="java.lang.String"/>
+	<field name="rawat_jalan_kode_periksa" class="java.lang.String"/>
+	<field name="rawat_jalan_kode_obat" class="java.lang.String"/>
+	<field name="rawat_jalan_jumlah_obat" class="java.lang.Integer"/>
+	<field name="rawat_jalan_harga" class="java.lang.String"/>
+	<field name="pasien_id_pasien" class="java.lang.String"/>
+	<field name="pasien_nama_pasien" class="java.lang.String"/>
+	<field name="pasien_jenis_kelamin" class="java.lang.String"/>
+	<field name="pasien_umur" class="java.lang.Integer"/>
+	<field name="pasien_alamat" class="java.lang.String"/>
+	<field name="pasien_no_hp" class="java.lang.String"/>
+	<field name="pemeriksaan_kode_periksa" class="java.lang.String"/>
+	<field name="pemeriksaan_id_pasien" class="java.lang.String"/>
+	<field name="pemeriksaan_id_dokter" class="java.lang.String"/>
+	<field name="pemeriksaan_diagnosa" class="java.lang.String"/>
+	<field name="pemeriksaan_tgl_periksa" class="java.sql.Date"/>
+	<field name="obat_kode_obat" class="java.lang.String"/>
+	<field name="obat_nama_obat" class="java.lang.String"/>
+	<field name="obat_jenis_obat" class="java.lang.String"/>
+	<field name="obat_harga" class="java.lang.String"/>
+	<field name="dokter_id_dokter" class="java.lang.String"/>
+	<field name="dokter_nama_dokter" class="java.lang.String"/>
+	<field name="dokter_id_spesialis" class="java.lang.String"/>
+	<field name="dokter_hari_praktek" class="java.lang.String"/>
+	<field name="dokter_jam_praktek" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="5" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="101" y="0" width="375" height="41" uuid="152d8f43-2734-46a1-8def-0bcc7035f200"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Rawat Jalan]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="555" height="1" uuid="4db4b7e0-aea0-44de-9d99-703cbaab29b6"/>
+			</line>
+			<staticText>
+				<reportElement x="399" y="3" width="41" height="20" uuid="cc29ef73-b960-43b2-94a7-80613c7f6f63"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<line>
+				<reportElement x="78" y="0" width="1" height="25" uuid="867e35bb-7bc3-48ca-97ec-ebbc5d0c69d2"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="25" uuid="5b51c8a9-fdcd-4813-8c58-683b5361003c"/>
+			</line>
+			<staticText>
+				<reportElement x="211" y="3" width="82" height="20" uuid="4713812e-09f4-4a96-92c0-434d01bd9334"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="12" y="3" width="56" height="20" uuid="d8812ae1-2ac9-4268-a275-7eea340700bb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Rawat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="3" width="64" height="20" uuid="85892699-a2e1-4c30-9f57-62552eac4f87"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="89" y="3" width="100" height="20" uuid="3b0a4a47-5386-4aaf-acc2-bd3a02d7a67b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<line>
+				<reportElement x="388" y="0" width="1" height="25" uuid="636e440d-f9fc-4296-8999-afad14528870"/>
+			</line>
+			<line>
+				<reportElement x="450" y="0" width="1" height="25" uuid="c6197515-946a-423e-a137-cf1f0d7d8a82"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="1" height="25" uuid="ddfbd9b8-d81c-4f04-8788-1e16f467475c"/>
+			</line>
+			<line>
+				<reportElement x="200" y="0" width="1" height="25" uuid="d9084b2a-b93a-41c1-97b6-d4206ee3f811"/>
+			</line>
+			<staticText>
+				<reportElement x="461" y="3" width="84" height="20" uuid="00ea836f-c39d-48aa-949b-638a4c7672b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Total Harga]]></text>
+			</staticText>
+			<line>
+				<reportElement x="555" y="0" width="1" height="25" uuid="d8cdb093-5024-4499-ab61-eeac44065ecd"/>
+			</line>
+			<line>
+				<reportElement x="2" y="24" width="555" height="1" uuid="c89be2c7-d873-463e-9b15-517852262c31"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="200" y="0" width="1" height="20" uuid="0fbe873a-15d2-40c3-9bdf-3a141b28abdf"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="1" height="19" uuid="c949e2be-215d-4c1d-be7a-1ddea9724d79"/>
+			</line>
+			<line>
+				<reportElement x="303" y="0" width="1" height="20" uuid="411ee1d6-8397-4576-99f9-6d60d2ea2b12"/>
+			</line>
+			<line>
+				<reportElement x="388" y="0" width="1" height="20" uuid="a38d27c5-93b4-4cf5-bf67-2b949ea3f0de"/>
+			</line>
+			<line>
+				<reportElement x="1" y="19" width="555" height="1" uuid="27e76446-da8e-49c4-b5aa-c778428966f0"/>
+			</line>
+			<line>
+				<reportElement x="78" y="0" width="1" height="20" uuid="e74ca816-6d29-4738-aa48-0841eac2c1c9"/>
+			</line>
+			<line>
+				<reportElement x="450" y="0" width="1" height="20" uuid="d4754ce0-cbfd-4758-83cf-1f54bc14646c"/>
+			</line>
+			<line>
+				<reportElement x="555" y="0" width="1" height="20" uuid="a3ce8907-e2d3-43aa-b53c-7b2ad71f0737"/>
+			</line>
+			<textField>
+				<reportElement x="12" y="0" width="56" height="20" uuid="61e277e4-f437-4988-b339-a02bd8fd8631"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rawat_jalan_id_rawat_jalan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="0" width="100" height="20" uuid="fe9f9f00-718d-456a-ab13-c0a38be0e1a3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="211" y="0" width="82" height="20" uuid="6c58cdeb-553e-43cd-a802-a75064aef296"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_nama_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="64" height="20" uuid="5425c392-e2f2-4469-aaeb-976ff79d6103"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_jenis_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="41" height="20" uuid="96bf4aa5-b511-404e-970e-feafd76ff2cc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rawat_jalan_jumlah_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="461" y="0" width="84" height="20" uuid="ac6ddae2-aa2a-4872-ae41-ae62cd467b41"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{rawat_jalan_harga}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

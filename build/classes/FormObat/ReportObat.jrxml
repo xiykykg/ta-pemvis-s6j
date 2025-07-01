@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="970bef57-c1d4-4afc-a9d8-2fc7d7942f84">
+	<property name="ireport.zoom" value="1.6105100000000103"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     obat.`kode_obat` AS obat_kode_obat,
+     obat.`nama_obat` AS obat_nama_obat,
+     obat.`jenis_obat` AS obat_jenis_obat,
+     obat.`harga` AS obat_harga
+FROM
+     `obat` obat]]>
+	</queryString>
+	<field name="obat_kode_obat" class="java.lang.String"/>
+	<field name="obat_nama_obat" class="java.lang.String"/>
+	<field name="obat_jenis_obat" class="java.lang.String"/>
+	<field name="obat_harga" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="12" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="145" y="0" width="283" height="48" uuid="1902899f-e6f7-4d3c-a7cd-422624b2ce2c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Obat]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="3" width="72" height="20" uuid="7fd13d26-0d77-4540-b407-e4c6a1795e41"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Kode Obat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="b0cfac0c-124c-408a-86f2-a023cefd3b44"/>
+			</line>
+			<line>
+				<reportElement x="0" y="25" width="555" height="1" uuid="187d6417-462a-41f5-8085-b0d05c094d7d"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="a3f8b6f5-4b69-47cf-a615-7bd2d580536b"/>
+			</line>
+			<line>
+				<reportElement x="92" y="1" width="1" height="25" uuid="5d4524fa-d0f1-47a0-9109-a23c4904f71a"/>
+			</line>
+			<staticText>
+				<reportElement x="105" y="3" width="168" height="20" uuid="251e339b-27f7-472d-a6dc-5d0b09861bc6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="285" y="1" width="1" height="25" uuid="07968ded-6fea-4416-98f9-96449205afdb"/>
+			</line>
+			<staticText>
+				<reportElement x="311" y="3" width="100" height="20" uuid="3ca647bd-b5bd-438d-a7a1-473e4eb5705e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="441" y="3" width="100" height="20" uuid="e495731a-f5f7-4e23-8171-e7bab5479b1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Harga_Obat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="427" y="1" width="1" height="25" uuid="3116de54-7126-4b02-a2a1-4b96bd06dcd3"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="25" uuid="f89b5785-4be3-49fd-a869-654bfa050a14"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="0" width="72" height="20" uuid="b9757c2a-8475-4d14-9257-25e119bc0951"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_kode_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="105" y="0" width="168" height="20" uuid="82a4e4b7-76d7-4629-aaf7-284de5491b88"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_nama_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="311" y="0" width="100" height="20" uuid="a57a9c61-4373-405d-8228-c097e8bcfd1d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_jenis_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="441" y="0" width="100" height="20" uuid="e7560543-c860-428d-a6ad-aa70a4b04897"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{obat_harga}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="554" y="0" width="1" height="20" uuid="b3c2f292-51dd-452f-ba77-54d408e9e152"/>
+			</line>
+			<line>
+				<reportElement x="427" y="0" width="1" height="20" uuid="e2810627-49c1-4b85-892c-6087636f9141"/>
+			</line>
+			<line>
+				<reportElement x="285" y="0" width="1" height="20" uuid="875fee40-13c7-4b5e-9d12-2d948272928b"/>
+			</line>
+			<line>
+				<reportElement x="92" y="0" width="1" height="20" uuid="29ccbbf7-d5ca-4233-9923-714ac839e7d9"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="20" uuid="58aa20a0-9e10-4db4-a78e-a497b4da9408"/>
+			</line>
+			<line>
+				<reportElement x="1" y="19" width="555" height="1" uuid="573b3b3e-10ac-43fc-818e-775ce91a2537"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

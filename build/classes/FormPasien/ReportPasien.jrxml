@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1b0bedaf-e28d-4d4c-9aaa-99dae1203a76">
+	<property name="ireport.zoom" value="2.3579476910000143"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pasien.`id_pasien` AS pasien_id_pasien,
+     pasien.`nama_pasien` AS pasien_nama_pasien,
+     pasien.`jenis_kelamin` AS pasien_jenis_kelamin,
+     pasien.`umur` AS pasien_umur,
+     pasien.`alamat` AS pasien_alamat,
+     pasien.`no_hp` AS pasien_no_hp
+FROM
+     `pasien` pasien]]>
+	</queryString>
+	<field name="pasien_id_pasien" class="java.lang.String"/>
+	<field name="pasien_nama_pasien" class="java.lang.String"/>
+	<field name="pasien_jenis_kelamin" class="java.lang.String"/>
+	<field name="pasien_umur" class="java.lang.Integer"/>
+	<field name="pasien_alamat" class="java.lang.String"/>
+	<field name="pasien_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="17" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="0" width="303" height="41" uuid="32a1ea11-23a1-48e7-838c-811e003d7c52"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Pasien]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="c33990bd-1230-4497-9e18-26d66bca0e32"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="cc60c8f0-b810-4302-b6ff-8656fded8871"/>
+			</line>
+			<line>
+				<reportElement x="0" y="24" width="555" height="1" uuid="4262ee21-60a1-4967-9fdd-cffa1973a9a2"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="3" width="62" height="20" uuid="a7a47b19-6302-47a3-9184-aba783024807"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="94" y="3" width="100" height="20" uuid="0dd9e681-fea6-4c77-86eb-f3f9ddc0aa58"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<line>
+				<reportElement x="83" y="0" width="1" height="25" uuid="57b5c46c-a8ff-4e1b-a833-9ab127fe8d1c"/>
+			</line>
+			<line>
+				<reportElement x="204" y="0" width="1" height="25" uuid="2b07d333-8df5-409f-a0f5-1a9b77a72c0e"/>
+			</line>
+			<staticText>
+				<reportElement x="215" y="3" width="69" height="20" uuid="8b91b791-aa21-4fe9-b623-5713e9b42ccc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="305" y="3" width="51" height="20" uuid="fbcf2685-a9f6-4a58-8e35-7b0816877a67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Umur]]></text>
+			</staticText>
+			<line>
+				<reportElement x="294" y="0" width="1" height="25" uuid="74f5f390-b364-4b82-84d5-99fca497222d"/>
+			</line>
+			<staticText>
+				<reportElement x="379" y="3" width="80" height="20" uuid="7b1c245e-59e6-4897-964d-bc049e17ab67"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<line>
+				<reportElement x="366" y="0" width="1" height="25" uuid="0e3877ff-c8d7-4231-9168-170b5b7ef787"/>
+			</line>
+			<staticText>
+				<reportElement x="480" y="3" width="58" height="20" uuid="d7ac87a9-f67e-475b-a829-1f97181f4801"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[No Telpon]]></text>
+			</staticText>
+			<line>
+				<reportElement x="469" y="0" width="1" height="25" uuid="4f9a3985-f92b-4276-951b-53ce5ef52d0a"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="25" uuid="421fdb75-12fe-4fc2-b5f2-13203b9813d5"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="62" height="20" uuid="dbe57ffd-fa1a-45fb-b896-03be842b69af"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_id_pasien}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="0" width="1" height="20" uuid="957fb0fe-0e8a-4446-9a2f-284726850eaf"/>
+			</line>
+			<line>
+				<reportElement x="83" y="0" width="1" height="20" uuid="df74da5f-3b9a-4aa5-8a68-f261479fc7e0"/>
+			</line>
+			<textField>
+				<reportElement x="94" y="0" width="100" height="20" uuid="d2b1f85b-d9ad-455d-8758-2bd1add40a36"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_nama_pasien}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="204" y="0" width="1" height="20" uuid="48cfe767-5aaa-41e6-8232-050f4e25eed1"/>
+			</line>
+			<textField>
+				<reportElement x="215" y="0" width="69" height="20" uuid="9fd62176-7af4-4a73-805b-fe6ccb649bde"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="305" y="0" width="51" height="20" uuid="8d20133c-405a-4698-a249-5962f9e37fe6"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_umur}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="294" y="0" width="1" height="20" uuid="79d20792-83a4-4b65-aeb3-5aa1b2bb81d2"/>
+			</line>
+			<textField>
+				<reportElement x="379" y="0" width="80" height="20" uuid="c86a63d5-b4ce-439f-9bdf-9189b6f152e1"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_alamat}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="366" y="0" width="1" height="20" uuid="bed6d777-25c4-448b-91b6-7f0cba5ba0ad"/>
+			</line>
+			<line>
+				<reportElement x="469" y="0" width="1" height="20" uuid="01029904-2131-49e9-91a3-f0ec9b65c907"/>
+			</line>
+			<textField>
+				<reportElement x="480" y="0" width="74" height="20" uuid="c142cf12-92d7-468e-94e6-9ce48f0ac453"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_no_hp}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="554" y="0" width="1" height="20" uuid="f1548c7b-62e2-4be4-a580-ffbe2ae48c2d"/>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="7275a063-bc57-483c-bdcc-b91397930342"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

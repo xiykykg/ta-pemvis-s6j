@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a00f4325-f139-46c7-97eb-6c59239e36a4">
+	<property name="ireport.zoom" value="1.7715610000000144"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     spesialis.`id_spesialis` AS spesialis_id_spesialis,
+     spesialis.`nama_spesialis` AS spesialis_nama_spesialis
+FROM
+     `spesialis` spesialis]]>
+	</queryString>
+	<field name="spesialis_id_spesialis" class="java.lang.String"/>
+	<field name="spesialis_nama_spesialis" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="14" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="119" y="0" width="332" height="41" uuid="f60f06b4-d435-41b5-949a-4bf7732faed6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Spesialis]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="0e0b1fdc-897c-4204-b768-1d3d2c4fb756"/>
+			</line>
+			<line>
+				<reportElement x="0" y="24" width="555" height="1" uuid="6fc8a66a-7f42-4680-b4a6-ad731926de04"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="3" width="252" height="20" uuid="b0173626-b681-4de2-8c58-2578d74e24db"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Spesialis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="284" y="3" width="261" height="20" uuid="561eae8c-8591-4b4b-b853-0e3e4bd9206c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jenis Spesialis]]></text>
+			</staticText>
+			<line>
+				<reportElement x="273" y="0" width="1" height="25" uuid="26b9494d-6fa1-4d14-bef2-96ec6416d10f"/>
+			</line>
+			<line>
+				<reportElement x="1" y="0" width="554" height="1" uuid="272bf3a8-8719-4886-ad29-c9b86ecdae9c"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="25" uuid="65cb90a1-41c6-4d0e-998c-98756c431a4f"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="0" width="252" height="20" uuid="df2f7f1b-0fa5-4bca-a7cc-39c6dc596cbb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{spesialis_id_spesialis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="284" y="0" width="261" height="20" uuid="2ea6111f-2a92-4957-8ad9-35d3269ec536"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{spesialis_nama_spesialis}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="19" width="554" height="1" uuid="17d3d6c3-bb8e-418f-836a-1dee1b690396"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="20" uuid="bee42946-8822-4919-bc8a-f776c603a886"/>
+			</line>
+			<line>
+				<reportElement x="273" y="0" width="1" height="20" uuid="603e4408-2d51-4fac-bec9-3e8d96f2bc29"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="20" uuid="fd93637e-ff9a-4f09-a76f-c2b6c5b8fd77"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

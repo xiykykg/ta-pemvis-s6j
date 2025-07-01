@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="84118ead-0ce7-47a6-bff4-bc882f03ed87">
+	<property name="ireport.zoom" value="2.143588810000009"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     pemeriksaan.`kode_periksa` AS pemeriksaan_kode_periksa,
+     pemeriksaan.`id_pasien` AS pemeriksaan_id_pasien,
+     pemeriksaan.`id_dokter` AS pemeriksaan_id_dokter,
+     pemeriksaan.`diagnosa` AS pemeriksaan_diagnosa,
+     pemeriksaan.`tgl_periksa` AS pemeriksaan_tgl_periksa,
+     dokter.`id_dokter` AS dokter_id_dokter,
+     dokter.`nama_dokter` AS dokter_nama_dokter,
+     dokter.`id_spesialis` AS dokter_id_spesialis,
+     dokter.`hari_praktek` AS dokter_hari_praktek,
+     dokter.`jam_praktek` AS dokter_jam_praktek,
+     pasien.`id_pasien` AS pasien_id_pasien,
+     pasien.`nama_pasien` AS pasien_nama_pasien,
+     pasien.`jenis_kelamin` AS pasien_jenis_kelamin,
+     pasien.`umur` AS pasien_umur,
+     pasien.`alamat` AS pasien_alamat,
+     pasien.`no_hp` AS pasien_no_hp
+FROM
+     `pasien` pasien INNER JOIN `pemeriksaan` pemeriksaan ON pasien.`id_pasien` = pemeriksaan.`id_pasien`
+     INNER JOIN `dokter` dokter ON pemeriksaan.`id_dokter` = dokter.`id_dokter`]]>
+	</queryString>
+	<field name="pemeriksaan_kode_periksa" class="java.lang.String"/>
+	<field name="pemeriksaan_id_pasien" class="java.lang.String"/>
+	<field name="pemeriksaan_id_dokter" class="java.lang.String"/>
+	<field name="pemeriksaan_diagnosa" class="java.lang.String"/>
+	<field name="pemeriksaan_tgl_periksa" class="java.sql.Date"/>
+	<field name="dokter_id_dokter" class="java.lang.String"/>
+	<field name="dokter_nama_dokter" class="java.lang.String"/>
+	<field name="dokter_id_spesialis" class="java.lang.String"/>
+	<field name="dokter_hari_praktek" class="java.lang.String"/>
+	<field name="dokter_jam_praktek" class="java.lang.String"/>
+	<field name="pasien_id_pasien" class="java.lang.String"/>
+	<field name="pasien_nama_pasien" class="java.lang.String"/>
+	<field name="pasien_jenis_kelamin" class="java.lang.String"/>
+	<field name="pasien_umur" class="java.lang.Integer"/>
+	<field name="pasien_alamat" class="java.lang.String"/>
+	<field name="pasien_no_hp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="8" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="94" y="0" width="389" height="41" uuid="840eb74e-5a42-42eb-bcd8-87a5fe86ce9a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Pemeriksaan]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="1f840af6-3e58-4ea9-bd30-ce24b1c72687"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="25" uuid="f1b124df-3116-4df9-a82b-885200a796b6"/>
+			</line>
+			<staticText>
+				<reportElement x="94" y="3" width="100" height="20" uuid="a59207b4-caf1-4237-b825-a216f281933c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="216" y="3" width="100" height="20" uuid="3c315337-a9ac-48f7-b310-0fd9d70502e6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<line>
+				<reportElement x="451" y="0" width="1" height="25" uuid="413a02b7-0374-46df-8db4-55f63dd6a932"/>
+			</line>
+			<line>
+				<reportElement x="326" y="0" width="1" height="25" uuid="2738cf9d-c0a7-4d23-b1a8-4a9e5b4e52b7"/>
+			</line>
+			<line>
+				<reportElement x="205" y="0" width="1" height="25" uuid="6bfc5cde-bf41-48e0-bd46-638ad60ce5d7"/>
+			</line>
+			<staticText>
+				<reportElement x="11" y="3" width="61" height="20" uuid="cbc00083-307d-4642-816e-16b66940e114"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Kode Periksa]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="c4cdfc7f-dd60-4d68-b4f1-dfcacbff7e0d"/>
+			</line>
+			<line>
+				<reportElement x="82" y="0" width="1" height="25" uuid="be9ce02b-035f-4587-9971-a82bc27619a1"/>
+			</line>
+			<staticText>
+				<reportElement x="337" y="3" width="100" height="20" uuid="9587ee8d-f89e-42d1-b225-8112119c1da7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Diagnosa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="462" y="3" width="82" height="20" uuid="f812076d-22fc-4276-8f4f-003514728646"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Tanggal Periksa]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="24" width="555" height="1" uuid="82b6f38e-8e69-4e7b-85d8-6fceee05e51d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<line>
+				<reportElement x="554" y="0" width="1" height="20" uuid="52ab22b4-2fbb-43b7-a50b-db41db465d3b"/>
+			</line>
+			<line>
+				<reportElement x="451" y="0" width="1" height="20" uuid="a4e5d13a-11cf-45e9-abc1-ca69c3aa16ec"/>
+			</line>
+			<line>
+				<reportElement x="326" y="0" width="1" height="20" uuid="7f1a3d64-363c-4fef-8b14-c4ac3cc0a039"/>
+			</line>
+			<line>
+				<reportElement x="82" y="0" width="1" height="19" uuid="4cbfc7eb-3914-41b9-bbca-0be0376894a6"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="19" uuid="4e92f549-8cb5-45fb-a331-01aec6aafa0f"/>
+			</line>
+			<line>
+				<reportElement x="0" y="19" width="555" height="1" uuid="1442be11-ac68-411e-93d9-dc39473cf429"/>
+			</line>
+			<line>
+				<reportElement x="205" y="0" width="1" height="20" uuid="6f37c6fa-4e7d-4357-8710-4395fcf964eb"/>
+			</line>
+			<textField>
+				<reportElement x="11" y="0" width="61" height="20" uuid="bcc4b7c0-4c55-4b57-a740-3a5596c24115"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pemeriksaan_kode_periksa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="94" y="0" width="100" height="20" uuid="cf49cb61-2983-4faf-aee2-9b4e75b20f50"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pasien_nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="216" y="0" width="100" height="20" uuid="0fee1a28-8843-438b-b93f-385df3f38111"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dokter_nama_dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="0" width="100" height="20" uuid="f267ff77-62e3-436b-92b2-382eaa05a922"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pemeriksaan_diagnosa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="462" y="0" width="82" height="20" uuid="cb086263-2339-4f2f-ad16-a7ff243ac9ee"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pemeriksaan_tgl_periksa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

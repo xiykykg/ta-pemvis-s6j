@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e075a05-7282-4a11-a653-cfe5d614428c">
+	<property name="ireport.zoom" value="1.3310000000000062"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     dokter.`id_dokter` AS dokter_id_dokter,
+     dokter.`nama_dokter` AS dokter_nama_dokter,
+     dokter.`id_spesialis` AS dokter_id_spesialis,
+     dokter.`hari_praktek` AS dokter_hari_praktek,
+     dokter.`jam_praktek` AS dokter_jam_praktek,
+     spesialis.`id_spesialis` AS spesialis_id_spesialis,
+     spesialis.`nama_spesialis` AS spesialis_nama_spesialis
+FROM
+     `spesialis` spesialis INNER JOIN `dokter` dokter ON spesialis.`id_spesialis` = dokter.`id_spesialis`]]>
+	</queryString>
+	<field name="dokter_id_dokter" class="java.lang.String"/>
+	<field name="dokter_nama_dokter" class="java.lang.String"/>
+	<field name="dokter_id_spesialis" class="java.lang.String"/>
+	<field name="dokter_hari_praktek" class="java.lang.String"/>
+	<field name="dokter_jam_praktek" class="java.lang.String"/>
+	<field name="spesialis_id_spesialis" class="java.lang.String"/>
+	<field name="spesialis_nama_spesialis" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="15" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement x="138" y="0" width="303" height="41" uuid="f3f7b4db-ff3f-4dbf-9fdd-1dcd03b946c5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Dokter]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="271" y="3" width="90" height="20" uuid="d0f1568d-7df1-4aa0-ad02-511f6b79491a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jenis Spesialis]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="3" width="150" height="20" uuid="f61677dc-ed50-4a8f-ac7d-5f37a8104d00"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Dokter]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="9d65578a-b3d8-48c7-8509-60d0358ad485"/>
+			</line>
+			<line>
+				<reportElement x="89" y="0" width="1" height="25" uuid="2e18a451-6f98-495e-9512-6ee1169b139a"/>
+			</line>
+			<staticText>
+				<reportElement x="383" y="3" width="75" height="20" uuid="cc18a9c6-c3ca-4871-89cb-aa073afa4532"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Hari Praktik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="11" y="3" width="67" height="20" uuid="311dd3a1-b256-468b-bd40-af5befcab1e5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[ID Dokter]]></text>
+			</staticText>
+			<line>
+				<reportElement x="260" y="0" width="1" height="25" uuid="c067f301-dcb7-4746-9863-d7a7b3f5bd4c"/>
+			</line>
+			<line>
+				<reportElement x="554" y="1" width="1" height="24" uuid="bd7b0526-b7e9-4649-a277-9129e5c1c010"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="25" uuid="ce2e9f10-c709-4c0c-bd7f-7b30dda39e6e"/>
+			</line>
+			<line>
+				<reportElement x="371" y="0" width="1" height="25" uuid="284dbd20-cca0-4069-9e89-8ea2804fda89"/>
+			</line>
+			<staticText>
+				<reportElement x="479" y="3" width="65" height="20" uuid="561edc88-fba9-4e30-b9fb-226fc11220fd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jam Praktik]]></text>
+			</staticText>
+			<line>
+				<reportElement x="468" y="1" width="1" height="24" uuid="4aef0d3a-660b-4656-9c29-081b6c958ba8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="c40f8feb-4d65-4c94-8ae9-1e63c26a95cc"/>
+			</line>
+			<textField>
+				<reportElement x="11" y="1" width="67" height="20" uuid="72a5162d-5e90-4b01-a02b-2159d932934c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dokter_id_dokter}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="20" width="555" height="1" uuid="3a3170ec-c862-4bbb-80a5-e82090d5b37e"/>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="21" uuid="b8c09f1e-0e89-4040-be88-071650ec8b5a"/>
+			</line>
+			<line>
+				<reportElement x="89" y="0" width="1" height="21" uuid="ade5994f-b3ce-49a1-93df-b3e78bfd2a9a"/>
+			</line>
+			<line>
+				<reportElement x="260" y="0" width="1" height="21" uuid="8e534f3e-b09e-4590-8d0a-a4b83c6c8f0b"/>
+			</line>
+			<line>
+				<reportElement x="371" y="0" width="1" height="21" uuid="cc855acb-64bd-46e3-a210-8ead2d70f3ed"/>
+			</line>
+			<line>
+				<reportElement x="468" y="0" width="1" height="21" uuid="630145a2-8861-4a76-b754-12fa29e6649a"/>
+			</line>
+			<line>
+				<reportElement x="554" y="0" width="1" height="21" uuid="4a339dc6-041c-4d97-8adb-99e02b51b948"/>
+			</line>
+			<textField>
+				<reportElement x="100" y="1" width="150" height="20" uuid="1205f652-48f3-44aa-947d-ce9f88c7c0bc"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dokter_nama_dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="271" y="0" width="90" height="20" uuid="24d3ce61-dd47-41ce-a1e1-e830496c6e5c"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{spesialis_nama_spesialis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="75" height="20" uuid="348078fd-f0d6-49e7-b1fb-2fba420dab25"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dokter_hari_praktek}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="1" width="65" height="20" uuid="7339721f-609f-4a47-aae7-5a492cb1bde6"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{dokter_jam_praktek}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
